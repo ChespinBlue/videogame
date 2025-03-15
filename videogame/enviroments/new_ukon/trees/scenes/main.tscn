@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://sa0gbmddp45h"]
+
+[ext_resource type="PackedScene" uid="uid://dcsn2hrftcsvo" path="res://scenes/treeScene.tscn" id="1_qdgal"]
+[ext_resource type="Texture2D" uid="uid://cerbpc86rwxy" path="res://art/officeWallsFloor1.png" id="2_17yh2"]
+[ext_resource type="PackedScene" uid="uid://dd0p4g63ipawr" path="res://scenes/2treeScene.tscn" id="3_ycgru"]
+[ext_resource type="Script" path="res://player/CharacterBody2D.gd" id="5_6oc1u"]
+[ext_resource type="Texture2D" uid="uid://d3c4y27t5a0wt" path="res://icon.svg" id="6_swthm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5m26"]
+texture = ExtResource("2_17yh2")
+texture_region_size = Vector2i(24, 24)
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g84qv"]
+tile_size = Vector2i(24, 24)
+sources/0 = SubResource("TileSetAtlasSource_s5m26")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tss8d"]
+size = Vector2(36, 33.5)
+
+[node name="main" type="Node2D"]
+y_sort_enabled = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_g84qv")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 65536, 5, 1, 0, 5, 2, 131072, 5, 65536, 65536, 5, 131072, 0, 5, 196608, 0, 5, 262144, 131072, 5, 327680, 0, 5, 327681, 0, 5, 393217, 0, 5, 458753, 0, 5, 458754, 0, 5, 458755, 0, 5, 393219, 0, 5, 327683, 131072, 5, 262146, 0, 5, 196610, 0, 5, 196609, 65536, 5, 131073, 0, 5, 65537, 131072, 5, 262145, 131072, 5, 393216, 131072, 5, 458752, 131072, 5, 393218, 0, 5, 262147, 65536, 5, 327682, 65536, 5, 131074, 131072, 5, 65538, 65536, 5, 65539, 65536, 5, 3, 0, 5, 4, 0, 5, 131075, 65536, 5, 196611, 131072, 5, 196612, 65536, 5, 131076, 0, 5, 65540, 0, 5, 5, 65536, 5, 6, 0, 5, 65542, 0, 5, 65541, 65536, 5, 65543, 131072, 5, 131079, 131072, 5, 196614, 131072, 5, 196613, 0, 5, 131077, 65536, 5, 262149, 0, 5, 327685, 0, 5, 327684, 131072, 5, 262150, 65536, 5, 524288, 65536, 5, 524289, 0, 5, 524290, 131072, 5, 524291, 0, 5, 524292, 131072, 5, 524293, 131072, 5, 524294, 131072, 5, 458757, 0, 5, 458756, 0, 5, 393220, 131072, 5, 393221, 65536, 5, 262148, 65536, 5, 131078, 131072, 5, 7, 131072, 5, 8, 131072, 5, 9, 0, 5, 10, 131072, 5, 11, 0, 5, 12, 131072, 5, 65548, 0, 5, 131084, 0, 5, 196620, 131072, 5, 262156, 65536, 5, 327692, 65536, 5, 393228, 0, 5, 458764, 65536, 5, 524300, 131072, 5, 524299, 131072, 5, 524298, 0, 5, 524297, 0, 5, 524296, 131072, 5, 524295, 65536, 5, 458758, 65536, 5, 458759, 65536, 5, 458760, 131072, 5, 458761, 65536, 5, 458762, 65536, 5, 458763, 131072, 5, 393227, 65536, 5, 393226, 131072, 5, 393225, 65536, 5, 393224, 0, 5, 393223, 65536, 5, 393222, 65536, 5, 327686, 65536, 5, 327687, 131072, 5, 327688, 131072, 5, 327689, 0, 5, 327690, 65536, 5, 327691, 65536, 5, 262155, 65536, 5, 262154, 131072, 5, 262153, 131072, 5, 262152, 0, 5, 196616, 131072, 5, 196615, 0, 5, 262151, 0, 5, 131080, 131072, 5, 65544, 0, 5, 65545, 65536, 5, 65546, 65536, 5, 65547, 0, 5, 131082, 65536, 5, 131081, 0, 5, 196617, 65536, 5, 196618, 65536, 5, 131083, 131072, 5, 196619, 0, 5, 589836, 0, 5, 589835, 65536, 5, 589834, 0, 5, 589833, 131072, 5, 589832, 131072, 5, 589831, 65536, 5, 589830, 131072, 5, 589829, 65536, 5, 589828, 65536, 5, 589827, 0, 5, 589826, 131072, 5, 589825, 65536, 5, 589824, 131072, 5)
+
+[node name="treeScene" parent="." instance=ExtResource("1_qdgal")]
+y_sort_enabled = true
+position = Vector2(23, 235)
+
+[node name="2treeScene" parent="." instance=ExtResource("3_ycgru")]
+position = Vector2(162, 200)
+
+[node name="2treeScene" parent="2treeScene" instance=ExtResource("3_ycgru")]
+position = Vector2(123, 15)
+
+[node name="2treeScene" parent="2treeScene/2treeScene" instance=ExtResource("3_ycgru")]
+position = Vector2(88, -17)
+
+[node name="2treeScene" parent="2treeScene/2treeScene/2treeScene" instance=ExtResource("3_ycgru")]
+position = Vector2(76, -69)
+
+[node name="2treeScene" parent="2treeScene/2treeScene/2treeScene/2treeScene" instance=ExtResource("3_ycgru")]
+position = Vector2(41, 89)
+
+[node name="2treeScene" parent="2treeScene/2treeScene/2treeScene/2treeScene/2treeScene" instance=ExtResource("3_ycgru")]
+position = Vector2(131, -23)
+
+[node name="playerCam" type="Camera2D" parent="."]
+position = Vector2(29, 34)
+
+[node name="player" type="CharacterBody2D" parent="."]
+y_sort_enabled = true
+script = ExtResource("5_6oc1u")
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+y_sort_enabled = true
+scale = Vector2(0.296875, 0.296875)
+texture = ExtResource("6_swthm")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="player"]
+position = Vector2(29, 34)
+remote_path = NodePath("../../playerCam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(0, 1.75)
+shape = SubResource("RectangleShape2D_tss8d")

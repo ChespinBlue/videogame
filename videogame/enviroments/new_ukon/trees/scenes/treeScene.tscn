@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcsn2hrftcsvo"]
+
+[ext_resource type="Script" path="res://enviroments/new_ukon/trees/scenes/trunk.gd" id="1_2djqv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uje6p"]
+size = Vector2(3, 2.75)
+
+[node name="treeScene" type="Node2D"]
+
+[node name="trunk" type="Line2D" parent="."]
+position = Vector2(-1, 1)
+points = PackedVector2Array(0, 0, 0, -100, 0, 0)
+width = 2.0
+default_color = Color(0.45098, 0.301961, 0.160784, 1)
+script = ExtResource("1_2djqv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-1, -25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_uje6p")

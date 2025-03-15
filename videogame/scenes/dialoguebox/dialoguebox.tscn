@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6ci8gm4r6xi7"]
+
+[ext_resource type="Theme" uid="uid://bha7rj8gisiwc" path="res://scenes/dialoguebox/dialoguebox.tres" id="1_7jts7"]
+[ext_resource type="Script" path="res://scenes/dialoguebox/dialoguebox.gd" id="1_pnqsc"]
+[ext_resource type="Texture2D" uid="uid://l78jgdg0dbwe" path="res://scenes/dialoguebox/closebutton.png" id="3_h1duc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_54j8s"]
+font_size = 32
+
+[node name="dialoguebox" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_pnqsc")
+
+[node name="Panel" type="Panel" parent="."]
+offset_top = 687.0
+offset_right = 1440.0
+offset_bottom = 1080.0
+theme = ExtResource("1_7jts7")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 30.0
+offset_right = 925.0
+offset_bottom = 69.0
+text = "guerghuiowefuiof"
+label_settings = SubResource("LabelSettings_54j8s")
+autowrap_mode = 3
+
+[node name="close" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.986
+anchor_top = 0.071
+anchor_right = 0.986
+anchor_bottom = 0.071
+offset_left = -46.84
+offset_top = -6.903
+offset_right = 6.16003
+offset_bottom = 49.097
+icon = ExtResource("3_h1duc")
+icon_alignment = 1
+
+[node name="scrollbar" type="VScrollBar" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 929.0
+offset_top = 68.0
+offset_right = 937.0
+offset_bottom = 152.0
+
+[connection signal="pressed" from="Panel/close" to="." method="_on_close_pressed"]
