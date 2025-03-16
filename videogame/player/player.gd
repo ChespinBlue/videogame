@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-const SPEED = 4.0
-const JUMP_VELOCITY = 4.5
+@export var SPEED = 4.0
+@export var JUMP_VELOCITY = 4.5
 
 ##### mostly sprite stuff
 var _position_last_frame := Vector3()
@@ -26,30 +26,6 @@ func _input(event):
 	if event.is_action_pressed("leftTurn"):
 		#rotation.y -= 2
 		pass
-	############# sprite animation direction
-	if event.is_action_pressed("right"):
-		currentdir = "right_idle"
-		moving += 1
-	if event.is_action_released("right"):
-		moving -= 1
-		
-	if event.is_action_pressed("left"):
-		moving += 1
-		currentdir = "left_idle"
-	if event.is_action_released("left"):
-		moving -= 1
-		
-	if event.is_action_pressed("down"):
-		moving += 1
-		currentdir = "down_idle"
-	if event.is_action_released("down"):
-		moving -= 1
-		
-	if event.is_action_pressed("up"):
-		moving += 1
-		currentdir = "up_idle"
-	if event.is_action_released("up"):
-		moving -= 1
 
 func _physics_process(delta):
 	
@@ -94,8 +70,9 @@ func _physics_process(delta):
 	if motion.x > 0:
 		anim.play("right_walk")
 		currentdir = "right_idle"
-		
-	if moving == 0:
+	
+	#if movign == 0
+	if abs(motion.z) + abs(motion.x) == 0:
 		anim.play(currentdir)
 	
 	

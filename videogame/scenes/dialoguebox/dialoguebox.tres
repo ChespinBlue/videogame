@@ -4,8 +4,11 @@
 [ext_resource type="FontFile" uid="uid://bw5w5hnjulohb" path="res://fonts/PixelOfficeSerrif1.ttf" id="1_iw7sd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kclfk"]
+bg_color = Color(0.214703, 0.214703, 0.214702, 1)
 
 [resource]
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_iw7sd")
 Button/styles/normal = ExtResource("1_ehen7")
 Label/fonts/font = ExtResource("1_iw7sd")
 Panel/styles/panel = SubResource("StyleBoxFlat_kclfk")

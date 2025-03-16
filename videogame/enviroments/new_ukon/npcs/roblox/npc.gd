@@ -13,12 +13,12 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 #### if player is in range to speak to npc, "in area" = true
 var inarea = false
 
-signal interacted(text)
+signal interacted(nam, text)
 
 func _input(event):
 	if event.is_action_pressed("interact"):
 		if inarea == true:
-			interacted.emit(dialogue)
+			interacted.emit(name, dialogue)
 
 ## updates if player in range to speak to npc
 func _on_npc_area_body_entered(body):

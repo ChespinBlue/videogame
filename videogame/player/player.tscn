@@ -4,7 +4,8 @@
 [ext_resource type="Script" path="res://player/player.gd" id="1_iislb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i6s4j"]
-height = 1.5
+radius = 0.3
+height = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pvx8p"]
 atlas = ExtResource("1_gji2g")
@@ -162,19 +163,22 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody3D"]
+floor_max_angle = 1.0472
 script = ExtResource("1_iislb")
+SPEED = 3.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_i6s4j")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 5.08245, 7.71057)
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 3.61, 5.538)
 fov = 50.0
 size = 6.046
 
 [node name="playersprite" type="AnimatedSprite3D" parent="."]
-pixel_size = 0.08
+pixel_size = 0.05
 billboard = 1
+shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_ikve7")
 animation = &"down_walk"

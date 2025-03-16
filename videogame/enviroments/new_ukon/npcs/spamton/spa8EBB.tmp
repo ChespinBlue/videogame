@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt8kcd1ju4jte"]
+
+[ext_resource type="Texture2D" uid="uid://db7ombmgqfp22" path="res://enviroments/new_ukon/npcs/spamton/ezgif-6-b67eef188c.png" id="1_aesfk"]
+[ext_resource type="Script" path="res://enviroments/new_ukon/npcs/spamton/spamton.gd" id="1_ixjwt"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uh755"]
+radius = 1.5
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wqs8e"]
+radius = 0.25
+height = 1.0
+
+[node name="spamton" type="Sprite3D"]
+pixel_size = 0.002
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_aesfk")
+script = ExtResource("1_ixjwt")
+
+[node name="spamtonArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="spamtonArea"]
+shape = SubResource("SphereShape3D_uh755")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CapsuleShape3D_wqs8e")
+
+[connection signal="body_entered" from="spamtonArea" to="." method="_on_spamton_area_body_entered"]
+[connection signal="body_exited" from="spamtonArea" to="." method="_on_spamton_area_body_exited"]
