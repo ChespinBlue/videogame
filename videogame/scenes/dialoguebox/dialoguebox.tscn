@@ -12,6 +12,7 @@ line_spacing = -5.0
 font_size = 32
 
 [node name="dialoguebox" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_pnqsc")
 
 [node name="Panel" type="Panel" parent="."]

@@ -3,6 +3,8 @@ extends CharacterBody3D
 @export var SPEED = 4.0
 @export var JUMP_VELOCITY = 4.5
 
+signal currentPosition(pos)
+
 ##### mostly sprite stuff
 var _position_last_frame := Vector3()
 @onready var anim = $playersprite
@@ -28,7 +30,7 @@ func _input(event):
 		pass
 
 func _physics_process(delta):
-	
+	currentPosition.emit(position)
 	### gets movement by comparing its position to last frame
 	## (because other motion data is in fancy physics stuff)
 	var motion = position - _position_last_frame
