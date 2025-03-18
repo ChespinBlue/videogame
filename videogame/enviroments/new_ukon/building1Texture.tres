@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cxrhg7dkm3pam"]
+
+[ext_resource type="Texture2D" uid="uid://dnbesjkfx8e2w" path="res://enviroments/new_ukon/buildings1.png" id="1_kw5ye"]
+
+[resource]
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_kw5ye")
+texture_filter = 0
