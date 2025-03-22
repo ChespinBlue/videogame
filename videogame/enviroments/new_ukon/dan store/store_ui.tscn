@@ -1,0 +1,139 @@
+[gd_scene load_steps=9 format=3 uid="uid://cjqgu8fm1b05v"]
+
+[ext_resource type="Script" path="res://enviroments/new_ukon/dan store/store_ui.gd" id="1_676d6"]
+[ext_resource type="Theme" uid="uid://8fkjoaox2lvt" path="res://enviroments/new_ukon/dan store/danTheme.tres" id="2_vd8mu"]
+[ext_resource type="Texture2D" uid="uid://biga7l0b1u2kh" path="res://layout.png" id="3_j05ot"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jieqs"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_ndi7t"]
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iacn2"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n43l7"]
+bg_color = Color(1, 0.482353, 0.219608, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_63qy7"]
+font_size = 48
+
+[node name="storeUI" type="CanvasLayer"]
+script = ExtResource("1_676d6")
+
+[node name="title" type="Panel" parent="."]
+offset_left = 248.0
+offset_top = 24.0
+offset_right = 686.0
+offset_bottom = 215.0
+theme = ExtResource("2_vd8mu")
+
+[node name="logo" type="Label" parent="title"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 290.0
+text = "DAN STORE"
+label_settings = SubResource("LabelSettings_jieqs")
+
+[node name="heading" type="Label" parent="title"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 108.0
+offset_right = 388.0
+offset_bottom = 153.0
+text = "welcom to dan store"
+label_settings = SubResource("LabelSettings_ndi7t")
+
+[node name="inventory" type="Panel" parent="."]
+offset_left = 16.0
+offset_top = 80.0
+offset_right = 304.0
+offset_bottom = 427.0
+theme = ExtResource("2_vd8mu")
+theme_override_styles/panel = SubResource("StyleBoxFlat_iacn2")
+
+[node name="Panel" type="Panel" parent="inventory"]
+layout_mode = 0
+offset_right = 298.0
+offset_bottom = 67.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_n43l7")
+
+[node name="Label" type="Label" parent="inventory/Panel"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = -3.0
+offset_right = 214.0
+offset_bottom = 64.0
+text = "BUY"
+label_settings = SubResource("LabelSettings_63qy7")
+
+[node name="list" type="VBoxContainer" parent="inventory"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 83.0
+offset_right = 203.0
+offset_bottom = 306.0
+
+[node name="itemB1" type="Button" parent="inventory/list"]
+layout_mode = 2
+theme = ExtResource("2_vd8mu")
+text = " Item 1"
+alignment = 0
+
+[node name="itemB2" type="Button" parent="inventory/list"]
+layout_mode = 2
+theme = ExtResource("2_vd8mu")
+text = " Item 2"
+alignment = 0
+
+[node name="itemB3" type="Button" parent="inventory/list"]
+layout_mode = 2
+theme = ExtResource("2_vd8mu")
+text = " Item 2"
+alignment = 0
+
+[node name="itemB4" type="Button" parent="inventory/list"]
+layout_mode = 2
+theme = ExtResource("2_vd8mu")
+text = " Item 2"
+alignment = 0
+
+[node name="itemB5" type="Button" parent="inventory/list"]
+layout_mode = 2
+theme = ExtResource("2_vd8mu")
+text = " Item 2"
+alignment = 0
+
+[node name="itemB6" type="Button" parent="inventory/list"]
+layout_mode = 2
+theme = ExtResource("2_vd8mu")
+text = " Item 2"
+alignment = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(513, 384)
+texture = ExtResource("3_j05ot")
+metadata/_edit_lock_ = true
+
+[connection signal="mouse_entered" from="inventory/list/itemB1" to="." method="_on_item_b_1_mouse_entered"]
+[connection signal="pressed" from="inventory/list/itemB1" to="." method="_on_item_b_1_pressed"]
+[connection signal="mouse_entered" from="inventory/list/itemB2" to="." method="_on_item_b_2_mouse_entered"]
+[connection signal="pressed" from="inventory/list/itemB2" to="." method="_on_item_b_2_pressed"]
+[connection signal="mouse_entered" from="inventory/list/itemB3" to="." method="_on_item_b_3_mouse_entered"]
+[connection signal="pressed" from="inventory/list/itemB3" to="." method="_on_item_b_3_pressed"]
+[connection signal="mouse_entered" from="inventory/list/itemB4" to="." method="_on_item_b_4_mouse_entered"]
+[connection signal="pressed" from="inventory/list/itemB4" to="." method="_on_item_b_4_pressed"]
+[connection signal="mouse_entered" from="inventory/list/itemB5" to="." method="_on_item_b_5_mouse_entered"]
+[connection signal="pressed" from="inventory/list/itemB5" to="." method="_on_item_b_5_pressed"]
+[connection signal="mouse_entered" from="inventory/list/itemB6" to="." method="_on_item_b_6_mouse_entered"]
+[connection signal="pressed" from="inventory/list/itemB6" to="." method="_on_item_b_6_pressed"]

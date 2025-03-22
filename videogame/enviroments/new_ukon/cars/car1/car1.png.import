@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0342pcpunkg4"
-path.s3tc="res://.godot/imported/street1.png-671507a3629141f06a6d1250930e158c.s3tc.ctex"
+uid="uid://opqy0wmnluab"
+path="res://.godot/imported/car1.png-7531791743562075927f6ff43e605c7c.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://enviroments/new_ukon/street1.png"
-dest_files=["res://.godot/imported/street1.png-671507a3629141f06a6d1250930e158c.s3tc.ctex"]
+source_file="res://enviroments/new_ukon/cars/car1/car1.png"
+dest_files=["res://.godot/imported/car1.png-7531791743562075927f6ff43e605c7c.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

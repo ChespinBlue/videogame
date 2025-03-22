@@ -1,0 +1,117 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6ci8gm4r6xi7"]
+
+[ext_resource type="Theme" uid="uid://bha7rj8gisiwc" path="res://player/dialoguebox/dialoguebox.tres" id="1_7jts7"]
+[ext_resource type="Script" path="res://player/dialoguebox/dialoguebox.gd" id="1_pnqsc"]
+[ext_resource type="Texture2D" uid="uid://p0qi87031cpu" path="res://player/dialoguebox/box.png" id="2_8jqct"]
+[ext_resource type="Texture2D" uid="uid://cfqa2fo8r3ql5" path="res://player/dialoguebox/x.png" id="3_j2mt7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i45e4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_54j8s"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_yyiq3"]
+line_spacing = -5.0
+font_size = 32
+
+[node name="dialoguebox" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_pnqsc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(512, 614)
+scale = Vector2(4, 4)
+texture = ExtResource("2_8jqct")
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -1.0
+offset_top = 436.0
+offset_right = 1022.0
+offset_bottom = 768.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_i45e4")
+metadata/_edit_lock_ = true
+
+[node name="body" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 119.0
+offset_right = 937.0
+offset_bottom = 158.0
+theme = ExtResource("1_7jts7")
+text = "guerghuiowefuiof"
+label_settings = SubResource("LabelSettings_54j8s")
+autowrap_mode = 3
+
+[node name="close" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.986
+anchor_top = 0.071
+anchor_right = 0.986
+anchor_bottom = 0.071
+offset_left = -53.678
+offset_top = 33.428
+offset_right = -21.678
+offset_bottom = 65.428
+theme = ExtResource("1_7jts7")
+icon = ExtResource("3_j2mt7")
+icon_alignment = 1
+expand_icon = true
+
+[node name="scrollbar" type="VScrollBar" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 929.0
+offset_top = 68.0
+offset_right = 937.0
+offset_bottom = 152.0
+
+[node name="name" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 56.0
+offset_right = 554.0
+offset_bottom = 92.0
+theme = ExtResource("1_7jts7")
+text = "name"
+label_settings = SubResource("LabelSettings_yyiq3")
+autowrap_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 233.0
+offset_right = 971.0
+offset_bottom = 292.0
+alignment = 1
+
+[node name="option1" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_7jts7")
+text = "option 1"
+
+[node name="option2" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_7jts7")
+text = "option 2"
+
+[node name="option3" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_7jts7")
+text = "option 3"
+
+[node name="option4" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_7jts7")
+text = "option 4"
+
+[connection signal="pressed" from="Panel/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/option1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/option2" to="." method="_on_option_2_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/option3" to="." method="_on_option_3_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/option4" to="." method="_on_option_4_pressed"]

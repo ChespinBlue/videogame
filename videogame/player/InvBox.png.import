@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0tvhucfftpbo"
-path="res://.godot/imported/61w1Q5OxE2L.jpg-22b5f45261a0d9f06c078172993724c2.ctex"
+uid="uid://ddtvbjjf6j18r"
+path="res://.godot/imported/InvBox.png-b76d6768bea69ab7921a3f7631c3da30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/dialoguebox/61w1Q5OxE2L.jpg"
-dest_files=["res://.godot/imported/61w1Q5OxE2L.jpg-22b5f45261a0d9f06c078172993724c2.ctex"]
+source_file="res://player/InvBox.png"
+dest_files=["res://.godot/imported/InvBox.png-b76d6768bea69ab7921a3f7631c3da30.ctex"]
 
 [params]
 

@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://1f6gdim43kly"]
+
+[ext_resource type="Script" path="res://player/inventory.gd" id="1_bv0cp"]
+[ext_resource type="Texture2D" uid="uid://ddtvbjjf6j18r" path="res://player/InvBox.png" id="1_etosc"]
+[ext_resource type="Theme" uid="uid://bha7rj8gisiwc" path="res://player/dialoguebox/dialoguebox.tres" id="2_8uog8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5i28t"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_ctwfl"]
+font_size = 24
+
+[node name="inventory" type="CanvasLayer"]
+script = ExtResource("1_bv0cp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(850, 242)
+scale = Vector2(4, 4)
+texture = ExtResource("1_etosc")
+
+[node name="title" type="Label" parent="."]
+offset_left = 717.0
+offset_top = 32.0
+offset_right = 937.0
+offset_bottom = 68.0
+theme = ExtResource("2_8uog8")
+text = "Inventory"
+label_settings = SubResource("LabelSettings_5i28t")
+
+[node name="cash" type="Label" parent="."]
+offset_left = 717.0
+offset_top = 414.0
+offset_right = 937.0
+offset_bottom = 450.0
+theme = ExtResource("2_8uog8")
+text = "cash"
+label_settings = SubResource("LabelSettings_5i28t")
+
+[node name="list" type="VBoxContainer" parent="."]
+offset_left = 717.0
+offset_top = 81.0
+offset_right = 987.0
+offset_bottom = 406.0
+
+[node name="item1" type="Label" parent="list"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_8uog8")
+text = "vdsklsvnvrbj"
+label_settings = SubResource("LabelSettings_ctwfl")
+
+[node name="item2" type="Label" parent="list"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_8uog8")
+text = "vdsklsvnvrbj"
+label_settings = SubResource("LabelSettings_ctwfl")
+
+[node name="item3" type="Label" parent="list"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_8uog8")
+text = "vdsklsvnvrbj"
+label_settings = SubResource("LabelSettings_ctwfl")
+
+[node name="item4" type="Label" parent="list"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_8uog8")
+text = "vdsklsvnvrbj"
+label_settings = SubResource("LabelSettings_ctwfl")
+
+[node name="item5" type="Label" parent="list"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_8uog8")
+text = "vdsklsvnvrbj"
+label_settings = SubResource("LabelSettings_ctwfl")
+
+[node name="item6" type="Label" parent="list"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_8uog8")
+text = "vdsklsvnvrbj"
+label_settings = SubResource("LabelSettings_ctwfl")
+
+[node name="item7" type="Label" parent="list"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_8uog8")
+text = "vdsklsvnvrbj"
+label_settings = SubResource("LabelSettings_ctwfl")
+
+[node name="item8" type="Label" parent="list"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_8uog8")
+text = "vdsklsvnvrbj"
+label_settings = SubResource("LabelSettings_ctwfl")

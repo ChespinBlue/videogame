@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6acrwhdkq065"
-path="res://.godot/imported/x.png-eba0fb4b5ee667b8e588fb94c6d0f6d9.ctex"
+uid="uid://7napbmp1e37p"
+path="res://.godot/imported/car11.png-d4e2be78d72ae4bbe84a47c26a4d09a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/dialoguebox/x.png"
-dest_files=["res://.godot/imported/x.png-eba0fb4b5ee667b8e588fb94c6d0f6d9.ctex"]
+source_file="res://enviroments/new_ukon/cars/car1/car11.png"
+dest_files=["res://.godot/imported/car11.png-d4e2be78d72ae4bbe84a47c26a4d09a5.ctex"]
 
 [params]
 

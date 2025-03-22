@@ -109,3 +109,16 @@ func _physics_process(delta):
 ## updates varaible to know whether or not the dialogue box is open
 func _on_dialoguebox_dialboxstatus(dialboxopen):
 	dialboxopenPlayerSide = dialboxopen
+
+#### know if in car
+var OInCar
+func _on_car_1_in_car_s(InCar: Variant, pos: Variant) -> void:
+	if InCar == true:
+		carRide(pos)
+	if OInCar != InCar:
+		visible = true
+	OInCar = InCar
+	
+func carRide(pos):
+	position = Vector3(pos.x,pos.y+1.5,pos.z)
+	visible = false

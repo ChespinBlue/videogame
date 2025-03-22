@@ -1,0 +1,12 @@
+# Blender 4.3.2 MTL File: 'untitled.blend'
+# www.blender.org
+
+newmtl Material.001
+Ns 586.543091
+Ka 0.326284 0.326284 0.326284
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 3
+map_Kd car1.png
+map_d car1.png

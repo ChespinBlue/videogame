@@ -1,7 +1,10 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bha7rj8gisiwc"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bha7rj8gisiwc"]
 
-[ext_resource type="StyleBox" uid="uid://bd1y7o2bsmolp" path="res://scenes/dialoguebox/closebuttonnormal.tres" id="1_ehen7"]
 [ext_resource type="FontFile" uid="uid://bw5w5hnjulohb" path="res://fonts/PixelOfficeSerrif1.ttf" id="1_iw7sd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5k26i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_428v5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kclfk"]
 bg_color = Color(0.214703, 0.214703, 0.214702, 1)
@@ -9,6 +12,7 @@ bg_color = Color(0.214703, 0.214703, 0.214702, 1)
 [resource]
 Button/font_sizes/font_size = 24
 Button/fonts/font = ExtResource("1_iw7sd")
-Button/styles/normal = ExtResource("1_ehen7")
+Button/styles/hover = SubResource("StyleBoxEmpty_5k26i")
+Button/styles/normal = SubResource("StyleBoxEmpty_428v5")
 Label/fonts/font = ExtResource("1_iw7sd")
 Panel/styles/panel = SubResource("StyleBoxFlat_kclfk")

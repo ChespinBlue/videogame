@@ -3,10 +3,10 @@ extends CanvasLayer
 @onready var body = $Panel/body
 @onready var nameL = $Panel/name
 @onready var scrollbar = $Panel/scrollbar
-@onready var option1b = $Panel/option1
-@onready var option2b = $Panel/option2
-@onready var option3b = $Panel/option3
-@onready var option4b = $Panel/option4
+@onready var option1b = $Panel/HBoxContainer/option1
+@onready var option2b = $Panel/HBoxContainer/option2
+@onready var option3b = $Panel/HBoxContainer/option3
+@onready var option4b = $Panel/HBoxContainer/option4
 
 var charCount
 
@@ -30,7 +30,6 @@ func _process(_delta):
 func _on_close_pressed():
 	scrollbar.visible = false
 	visible = false
-	print("cloesse")
 
 ########################################### text
 #### first var is text, the rest are input options
@@ -74,6 +73,8 @@ func showtext(nam, a, b = null, c = null, d = null, e = null):
 func _on_spamton_interacted(nam, text, b = null, c = null, d = null, e = null):
 	showtext(nam, text, b, c, d, e)
 func _on_npc_interacted(nam, text):
+	showtext(nam, text)
+func _on_store_ui_interacted(nam, text):
 	showtext(nam, text)
 
 #### when pressed, emits signal that-- nvm its pretty self expanitory
