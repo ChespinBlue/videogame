@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cg68lkco6a11p"]
 
-[ext_resource type="Texture2D" uid="uid://dtnskqj2p3xo2" path="res://enviroments/new_ukon/street1.png" id="1_xp3un"]
+[ext_resource type="Texture2D" uid="uid://0342pcpunkg4" path="res://enviroments/new_ukon/street1.png" id="1_xp3un"]
 
 [resource]
 transparency = 4
