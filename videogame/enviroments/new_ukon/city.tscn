@@ -129,8 +129,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.10245, 1.36374, -8.31687)
 pixel_size = 0.003
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_o7i2c")
-animation = &"idle"
-autoplay = "idle"
+animation = &"talking"
+autoplay = "talking"
 
 [node name="storeArea" type="Area3D" parent="store"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.5, -6.5)

@@ -3,6 +3,7 @@ extends CanvasLayer
 ####### if the name of a speaker contains this then it wont show the name
 #### useful for signs and stuff
 var NoShowCode = "#:#"
+var closeCode = "@:@"
 
 @onready var body = $Panel/body
 @onready var nameL = $Panel/name
@@ -38,6 +39,9 @@ func _on_close_pressed():
 ########################################### text
 #### first var is text, the rest are input options
 func showtext(nam, a, b = null, c = null, d = null, e = null):
+	if a == closeCode:
+		visible = false
+		return
 	currentSpeaker = nam
 	charCount = 0
 	visible = true
@@ -85,7 +89,7 @@ func _on_npc_interacted(nam, text):
 func _on_city_manhole_interacted(nam: Variant, text: Variant, op1: Variant, op2: Variant) -> void:
 	showtext(nam, text, op1, op2)
 
-#### when pressed, emits signal that-- nvm its pretty self expanitory
+#### when pressed, emits signal that-- nvm its pretty self explanitory
 func _on_option_1_pressed():
 	dialogueOption.emit(currentSpeaker, option1b.text)
 func _on_option_2_pressed():

@@ -22,4 +22,6 @@ func _input(event):
 func _on_city_dialogue_option(nam: Variant, option: Variant) -> void:
 	if nam == "#:#manhole":
 		if option == "yes":
-			pass
+			get_tree().change_scene_to_file("res://enviroments/new_ukon/sewer/sewer.tscn")
+		if option == "no":
+			interacted.emit(nam,"@:@","","")
