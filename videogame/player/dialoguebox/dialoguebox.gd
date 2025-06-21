@@ -1,5 +1,9 @@
 extends CanvasLayer
 
+####### if the name of a speaker contains this then it wont show the name
+#### useful for signs and stuff
+var NoShowCode = "#:#"
+
 @onready var body = $Panel/body
 @onready var nameL = $Panel/name
 @onready var scrollbar = $Panel/scrollbar
@@ -38,7 +42,11 @@ func showtext(nam, a, b = null, c = null, d = null, e = null):
 	charCount = 0
 	visible = true
 	body.text = a
-	nameL.text = nam
+	####### if the name of a speaker contains #:# then it wont show the name
+	if NoShowCode in nam:
+		nameL.text = ""
+	else:
+		nameL.text = nam
 	### if dialogue exceeds what the box can show then the scroll bar will appear
 	## scroll bar has not been coded to scroll yet 
 	for i in range(0, len(a)):  
@@ -74,8 +82,8 @@ func _on_spamton_interacted(nam, text, b = null, c = null, d = null, e = null):
 	showtext(nam, text, b, c, d, e)
 func _on_npc_interacted(nam, text):
 	showtext(nam, text)
-func _on_store_ui_interacted(nam, text):
-	showtext(nam, text)
+func _on_city_manhole_interacted(nam: Variant, text: Variant, op1: Variant, op2: Variant) -> void:
+	showtext(nam, text, op1, op2)
 
 #### when pressed, emits signal that-- nvm its pretty self expanitory
 func _on_option_1_pressed():

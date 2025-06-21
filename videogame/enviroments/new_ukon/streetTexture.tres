@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://0342pcpunkg4" path="res://enviroments/new_ukon/street1.png" id="1_xp3un"]
 
 [resource]
-transparency = 4
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 cull_mode = 2
 albedo_texture = ExtResource("1_xp3un")
 texture_filter = 0

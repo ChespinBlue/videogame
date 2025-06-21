@@ -31,17 +31,16 @@ func update_inventory():
 				list.get_child(i).text = ""
 
 
-func _on_store_ui_open_inv(open: Variant) -> void:
-	if open == true:
-		visible = true
-	else:
-		visible = false
-
-
-func _on_store_ui_add_inv(item: Variant, cost: Variant) -> void:
+func _on_city_store_add_inv(item: Variant, cost: Variant) -> void:
 	var numberInInv = 0
 	for i in inventory:
 		numberInInv += 1
 	if numberInInv < 8 and cash >= cost:
 		inventory.append(item)
 		cash -= cost
+
+func _on_city_store_open_inv(open) -> void:
+	if open == true:
+		visible = true
+	else:
+		visible = false
