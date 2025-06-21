@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var SPEED = 4.0
+@export var SPEED = 1.0
 @export var JUMP_VELOCITY = 4.5
 
 signal currentPosition(pos)
