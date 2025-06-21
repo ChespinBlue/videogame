@@ -9,7 +9,7 @@ void fragment() {
 	// Sample the original screen texture
 	vec4 original_color = texture(screen_texture, SCREEN_UV);
 	float color_amount = ((original_color.r + original_color.g + original_color.b - 3.0) * -1.0);
-	
+
 	if(color_amount < 2.0){
 		 grain_amount = 0.04;
 	}
@@ -22,11 +22,11 @@ void fragment() {
 	//if(color_amount < 0.5){
 		 //float grain_amount = 1.0;
 	//}
-		
+
 	//float grain_amount = ((original_color.r + original_color.g + original_color.b - 3.0) * -1.0)/16.0;
-	
+
 	float noise = 0.0;
-	
+
 	if (animate) {
 		// Generate random noise
 		noise = (fract(sin(dot(UV * TIME, vec2(12.9898, 78.233))) * 43758.5453) - 0.5) * 2.0;
@@ -35,7 +35,7 @@ void fragment() {
 	}
 	// Add noise to the original color
 	original_color.rgb += noise * grain_amount * grain_size;
-	
+
 	// Clamp the final color to make sure it stays in the valid range
 	COLOR = clamp(original_color, 0.0, 1.0);
 }
