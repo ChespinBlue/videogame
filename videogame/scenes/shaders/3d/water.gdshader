@@ -21,13 +21,13 @@ void vertex() {
 	//VERTEX.z += random(vec2(world_position.z,world_position.x))*ints;0.5
 	
 	float random_pos = random(vec2(UV*round_to_dec(TIME,0.1)));
-	VERTEX.y += mix(prev_pos, random_pos, 0.1);
+	VERTEX.y = mix(VERTEX.y, random_pos, 0.1);
 	prev_pos = VERTEX.y;
 }
 
 void fragment() {
-	ALBEDO = vec3(0.0,0.03,0.05);
-	ALPHA = 0.8;
+	ALBEDO = vec3(0.0,0.02,0.02);
+	ALPHA = 0.95;
 }
 
 //void light() {
