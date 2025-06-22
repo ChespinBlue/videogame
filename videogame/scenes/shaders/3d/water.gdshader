@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode unshaded;
+//render_mode unshaded;
 
 float round_to_dec(float num, float digit){
 	return round(num * pow(10.0, digit)) / pow(10.0, digit);
@@ -19,15 +19,15 @@ void vertex() {
 	//VERTEX.x += random(vec2(world_position.x,world_position.y))*ints;
 	//VERTEX.y += random(vec2(world_position.y,world_position.z))*ints;s
 	//VERTEX.z += random(vec2(world_position.z,world_position.x))*ints;0.5
-	
+
 	float random_pos = random(vec2(UV*round_to_dec(TIME,0.1)));
-	VERTEX.y = mix(VERTEX.y, random_pos, 0.1);
+	VERTEX.y = mix(VERTEX.y, random_pos, 0.06);
 	prev_pos = VERTEX.y;
 }
 
 void fragment() {
-	ALBEDO = vec3(0.0,0.02,0.02);
-	ALPHA = 0.95;
+	ALBEDO = vec3(0.0,0.05,0.03);
+	ALPHA = 0.9;
 }
 
 //void light() {
