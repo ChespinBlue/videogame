@@ -1,7 +1,7 @@
 extends Area3D
 var inarea = false
 
-var nam = "#:#manhole"
+var nam = "#:#manhole1"
 var text = "Would you like to enter the sewer?"
 signal interacted(nam, text, option1, option2)
 
@@ -20,7 +20,7 @@ func _input(event):
 
 
 func _on_city_dialogue_option(nam: Variant, option: Variant) -> void:
-	if nam == "#:#manhole":
+	if nam == "#:#manhole1":
 		if option == "yes":
 			get_tree().change_scene_to_file("res://enviroments/new_ukon/sewer/sewer.tscn")
 		if option == "no":

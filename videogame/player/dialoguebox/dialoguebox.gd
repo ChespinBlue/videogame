@@ -88,6 +88,8 @@ func _on_npc_interacted(nam, text):
 	showtext(nam, text)
 func _on_city_manhole_interacted(nam: Variant, text: Variant, op1: Variant, op2: Variant) -> void:
 	showtext(nam, text, op1, op2)
+func _on_sewer_interacted(nam: Variant, text: Variant, option1=null, option2=null) -> void:
+	showtext(nam, text, option1, option2)
 
 #### when pressed, emits signal that-- nvm its pretty self explanitory
 func _on_option_1_pressed():
