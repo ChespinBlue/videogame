@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxw368qyfqbmj"]
+
+[ext_resource type="PackedScene" uid="uid://cs8qc5ewnrb1k" path="res://enviroments/new_ukon/sewer/josh_rooms/josh_room1/josh_room1.tscn" id="1_njvuv"]
+[ext_resource type="PackedScene" uid="uid://b6ci8gm4r6xi7" path="res://player/dialoguebox/dialoguebox.tscn" id="2_ijk1g"]
+
+[node name="josh_rooms" type="Node2D"]
+
+[node name="josh_room1" parent="." instance=ExtResource("1_njvuv")]
+
+[node name="dialoguebox" parent="." instance=ExtResource("2_ijk1g")]

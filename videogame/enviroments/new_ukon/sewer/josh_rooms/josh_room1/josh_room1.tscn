@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=3 uid="uid://cs8qc5ewnrb1k"]
+
+[ext_resource type="PackedScene" uid="uid://d2wtgctnka4k0" path="res://player/2d/player2d.tscn" id="1_m64rf"]
+[ext_resource type="PackedScene" uid="uid://cwylnskrqfxt5" path="res://enviroments/new_ukon/sewer/josh_rooms/josh_rooms_entrance.tscn" id="2_ol3d1"]
+[ext_resource type="PackedScene" uid="uid://bhie6u5xrrd0r" path="res://enviroments/new_ukon/sewer/josh_rooms/sewer_dungeon/sewer_dungeon_torch.tscn" id="3_tm4tq"]
+[ext_resource type="Texture2D" uid="uid://cdqiduhmgaxot" path="res://enviroments/new_ukon/sewer/josh_rooms/josh_room1/firecirlce1.png" id="3_vn5wh"]
+[ext_resource type="Texture2D" uid="uid://bqtvt0gc3nkfm" path="res://enviroments/new_ukon/sewer/josh_rooms/sewer_dungeon1_doorway.png" id="5_xwatm"]
+[ext_resource type="Script" path="res://enviroments/new_ukon/sewer/josh_rooms/josh_room1/doorarea.gd" id="6_3gpn8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8ms2"]
+size = Vector2(47.6667, 42.3333)
+
+[node name="josh_room1" type="Node2D"]
+scale = Vector2(3, 3)
+
+[node name="background" type="SubViewportContainer" parent="."]
+offset_right = 1024.0
+offset_bottom = 768.0
+scale = Vector2(0.333, 0.333)
+stretch = true
+stretch_shrink = 3
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="SubViewport" type="SubViewport" parent="background"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(341, 256)
+render_target_update_mode = 4
+
+[node name="josh_rooms_entrance" parent="background/SubViewport" instance=ExtResource("2_ol3d1")]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(227, 44)
+color = Color(1, 0.696667, 0.35, 1)
+energy = 1.2
+shadow_color = Color(0, 0, 0, 1)
+shadow_item_cull_mask = 0
+texture = ExtResource("3_vn5wh")
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="."]
+offset_left = 212.0
+offset_top = 20.0
+offset_right = 252.0
+offset_bottom = 80.0
+metadata/_edit_lock_ = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer2"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(40, 60)
+render_target_update_mode = 4
+
+[node name="sewer_dungeon_torch" parent="SubViewportContainer2/SubViewport" instance=ExtResource("3_tm4tq")]
+position = Vector2(20, 40)
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(115, 42)
+color = Color(1, 0.696667, 0.35, 1)
+energy = 1.2
+shadow_color = Color(0, 0, 0, 1)
+shadow_item_cull_mask = 0
+texture = ExtResource("3_vn5wh")
+
+[node name="SubViewportContainer3" type="SubViewportContainer" parent="."]
+offset_left = 133.0
+offset_top = 20.0
+offset_right = 173.0
+offset_bottom = 80.0
+scale = Vector2(-1, 1)
+metadata/_edit_lock_ = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer3"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(40, 60)
+render_target_update_mode = 4
+
+[node name="sewer_dungeon_torch" parent="SubViewportContainer3/SubViewport" instance=ExtResource("3_tm4tq")]
+position = Vector2(20, 40)
+
+[node name="collidion" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collidion"]
+build_mode = 1
+polygon = PackedVector2Array(138.333, 74.3333, 150.333, 74.3333, 147, 29.3333, 193.333, 29.3333, 189.667, 74.3333, 202.667, 74.3333, 266.333, 119.333, 266.333, 165.333, 202.667, 210.667, 138.333, 210.667, 74.6667, 165.333, 74.6667, 119)
+metadata/_edit_lock_ = true
+
+[node name="player2d" parent="." instance=ExtResource("1_m64rf")]
+position = Vector2(167.667, 187.333)
+
+[node name="doorway" type="Sprite2D" parent="."]
+position = Vector2(170, 40)
+scale = Vector2(1.34347, 1)
+texture = ExtResource("5_xwatm")
+metadata/_edit_lock_ = true
+
+[node name="doorarea" type="Area2D" parent="."]
+position = Vector2(170, 15.3333)
+script = ExtResource("6_3gpn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doorarea"]
+position = Vector2(-0.5, 11.1667)
+shape = SubResource("RectangleShape2D_g8ms2")
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="doorarea" to="doorarea" method="_on_body_entered"]

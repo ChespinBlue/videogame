@@ -54,7 +54,7 @@ func _on_dialoguebox_dialogue_option(nam: Variant, option: Variant) -> void:
 			interacted.emit(nam,"@:@")
 	if nam == "#:#joshdoor":
 		if option == "yes":
-			get_tree().change_scene_to_file("res://scenes/main.tscn")
+			get_tree().change_scene_to_file("res://enviroments/new_ukon/sewer/josh_rooms/josh_rooms.tscn")
 		if option == "no":
 			interacted.emit(nam,"@:@")
 
@@ -73,7 +73,7 @@ func _on_ladder_area_body_exited(body: Node3D) -> void:
 		ladinarea = false
 		
 ### josh door
-var have_josh_key = true
+var have_josh_key = false
 var joshdoor_branch = 1
 var joshdoor_nam = "#:#joshdoor"
 var joshdoor_text1 = "You don't have a key for this door."

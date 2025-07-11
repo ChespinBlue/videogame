@@ -111,8 +111,15 @@ size_flags_horizontal = 3
 theme = ExtResource("1_7jts7")
 text = "option 4"
 
+[node name="option5" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_7jts7")
+text = "option 5"
+
 [connection signal="pressed" from="Panel/close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/option1" to="." method="_on_option_1_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/option2" to="." method="_on_option_2_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/option3" to="." method="_on_option_3_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/option4" to="." method="_on_option_4_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/option5" to="." method="_on_option_5_pressed"]
