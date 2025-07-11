@@ -12,6 +12,7 @@ var closeCode = "@:@"
 @onready var option2b = $Panel/HBoxContainer/option2
 @onready var option3b = $Panel/HBoxContainer/option3
 @onready var option4b = $Panel/HBoxContainer/option4
+@onready var option5b = $Panel/HBoxContainer/option5
 
 var charCount
 
@@ -38,7 +39,7 @@ func _on_close_pressed():
 
 ########################################### text
 #### first var is text, the rest are input options
-func showtext(nam, a, b = null, c = null, d = null, e = null):
+func showtext(nam, a, b = null, c = null, d = null, e = null, f = null):
 	if a == closeCode:
 		visible = false
 		return
@@ -80,6 +81,11 @@ func showtext(nam, a, b = null, c = null, d = null, e = null):
 		option4b.text = e
 	else:
 		option4b.visible = false
+	if f:
+		option5b.visible = true
+		option5b.text = f
+	else:
+		option5b.visible = false
 
 #### recieves signals and displays signaled text
 func _on_spamton_interacted(nam, text, b = null, c = null, d = null, e = null):
@@ -100,3 +106,5 @@ func _on_option_3_pressed():
 	dialogueOption.emit(currentSpeaker, option3b.text)
 func _on_option_4_pressed():
 	dialogueOption.emit(currentSpeaker, option4b.text)
+func _on_option_5_pressed() -> void:
+	dialogueOption.emit(currentSpeaker, option5b.text)

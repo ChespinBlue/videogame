@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhie6u5xrrd0r"]
+
+[ext_resource type="Texture2D" uid="uid://bkn8jcuqhno48" path="res://enviroments/new_ukon/sewer/josh_rooms/sewer_dungeon_torch1.png" id="1_uh0na"]
+[ext_resource type="Script" path="res://enviroments/new_ukon/sewer/josh_rooms/sewer_dungeon/sewer_dungeon_torch.gd" id="2_33a77"]
+[ext_resource type="Shader" path="res://scenes/shaders/pixel_quan.gdshader" id="3_v0hlm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lngcc"]
+shader = ExtResource("3_v0hlm")
+shader_parameter/pixel_width = 320.0
+shader_parameter/pixel_height = 180.0
+
+[node name="sewer_dungeon_torch" type="Sprite2D"]
+texture = ExtResource("1_uh0na")
+script = ExtResource("2_33a77")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.76, 0.544667, 0, 1)
+polygon = PackedVector2Array(-7, -13, -2, -13, -0.25, -16.5, -4.25, -28.5, -8.75, -16.5)
+
+[node name="Timer" type="Timer" parent="Polygon2D"]
+wait_time = 0.1
+autostart = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="Polygon2D"]
+color = Color(1, 0.995, 0.94, 1)
+polygon = PackedVector2Array(-6.25, -13.75, -3, -13.75, -4.5, -18.25)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+visible = false
+texture_filter = 1
+material = SubResource("ShaderMaterial_lngcc")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -61.0
+offset_right = 167.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(200, 160)
+render_target_update_mode = 0
+
+[connection signal="timeout" from="Polygon2D/Timer" to="." method="_on_timer_timeout"]
